@@ -2,6 +2,30 @@
 
 A single-player, browser-based crime RPG inspired by classic social games like Mafia Wars — rebuilt as a deep solo experience with infinite progression and zero multiplayer dependencies.
 
+## Screenshots
+
+**Dashboard** — stats, jobs, and grouped nav on desktop:
+
+![Dashboard (desktop)](docs/screenshots/dashboard-desktop.png)
+
+**Mobile** — bottom nav, compact header, and touch-friendly layout:
+
+![Dashboard (mobile)](docs/screenshots/dashboard-mobile.png)
+
+**Heists** — Case → Hit → Getaway with cooldowns and loot:
+
+![Heists](docs/screenshots/heists-desktop.png)
+
+**The Climb** — infinite PVE tower with enemy affixes and Intel rewards:
+
+![The Climb (desktop)](docs/screenshots/climb-desktop.png)
+
+![The Climb (mobile)](docs/screenshots/climb-mobile.png)
+
+**Prestige Shop** — permanent upgrades after your first Rebuild:
+
+![Prestige Shop](docs/screenshots/prestige-desktop.png)
+
 ## Play
 
 ```bash
