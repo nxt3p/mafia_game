@@ -1,0 +1,8 @@
+.venv/
+.local-libs/
+.local-libs-fetch/
+node_modules/
+tests/screenshots/
+.serve.pid
+playwright-report/
+test-results/

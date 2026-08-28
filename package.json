@@ -1,0 +1,13 @@
+{
+  "name": "mob-empire",
+  "private": true,
+  "scripts": {
+    "test:ui": "playwright test",
+    "test:ui:update": "playwright test --update-snapshots",
+    "test:ui:smoke": "node scripts/ui-smoke.js",
+    "seed:save": "node scripts/seed-test-save.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
