@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mob Empire — Single-Player Crime RPG</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="header">
+  <div class="header-top">
+    <h1>Mob Empire<span>Rise from street rat to crime lord</span></h1>
+    <button type="button" id="header-toggle" class="header-toggle" aria-expanded="true" aria-controls="header-secondary header-bars" onclick="toggleHeaderCompact()" title="Toggle stats">▾</button>
+  </div>
+  <div class="currency currency-primary">
+    <div class="cur cash"><small>Cash</small>$<span id="h-cash">0</span></div>
+    <div class="cur"><small>Lvl</small><span id="h-level" class="val-purple">1</span></div>
+    <div class="cur"><small>Energy</small><span id="h-en-compact">0/0</span></div>
+    <div class="cur"><small>Stamina</small><span id="h-st-compact">0/0</span></div>
+    <div class="cur"><small>HP</small><span id="h-hp-compact">0/0</span></div>
+  </div>
+  <div class="currency currency-secondary" id="header-secondary">
+    <div class="cur gold"><small>Gold</small><span id="h-gold">0</span> ◈</div>
+    <div class="cur heat"><small>Heat</small><span id="h-heat">0</span></div>
+    <div class="cur heat"><small>Wanted</small><span id="h-wanted" class="wanted-stars">☆☆☆☆☆</span></div>
+    <div class="cur"><small>Inf</small><span id="h-inf" class="val-purple">0</span></div>
+    <div class="cur gold"><small>PP</small><span id="h-pp">0</span></div>
+    <div class="cur"><small>Intel</small><span id="h-intel" class="val-blue">0</span></div>
+    <div id="boost-badges"></div>
+  </div>
+  <div class="bars-row" id="header-bars">
+    <div class="bar-block bar-xp">
+      <div class="bar-label"><span>XP</span><b id="h-xp-text">0 / 0</b></div>
+      <div class="bar"><div class="xp" id="h-xp-bar"></div></div>
+    </div>
+    <div class="bar-block bar-energy">
+      <div class="bar-label"><span>Energy <span id="h-en-timer"></span></span><b id="h-en-text">0 / 0</b></div>
+      <div class="bar"><div class="energy" id="h-en-bar"></div></div>
+    </div>
+    <div class="bar-block bar-stamina">
+      <div class="bar-label"><span>Stamina <span id="h-st-timer"></span></span><b id="h-st-text">0 / 0</b></div>
+      <div class="bar"><div class="stamina" id="h-st-bar"></div></div>
+    </div>
+    <div class="bar-block bar-health">
+      <div class="bar-label"><span>Health</span><b id="h-hp-text">0 / 0</b></div>
+      <div class="bar"><div class="health" id="h-hp-bar"></div></div>
+    </div>
+    <div class="bar-block bar-heat">
+      <div class="bar-label"><span>Heat</span><b id="h-heat-text">0 / 100</b></div>
+      <div class="bar"><div class="heat" id="h-heat-bar"></div></div>
+    </div>
+  </div>
+</div>
+
+<div id="nav-wrap">
+  <div id="nav-categories" role="tablist" aria-label="Categories"></div>
+  <div id="nav-subtabs" role="tablist" aria-label="Sections"></div>
+</div>
+
+<nav id="nav-bottom" aria-label="Mobile navigation"></nav>
+
+<div id="nav-more-backdrop" onclick="closeMoreSheet()" hidden></div>
+<div id="nav-more-sheet" role="dialog" aria-label="All sections" hidden>
+  <div class="more-sheet-head">
+    <h2>All Sections</h2>
+    <button type="button" class="btn small" onclick="closeMoreSheet()">Close</button>
+  </div>
+  <div id="nav-more-content"></div>
+</div>
+
+<div id="main" class="log-open">
+  <div id="content"></div>
+  <aside id="log-panel">
+    <div class="log-head">
+      <h3>Activity Log</h3>
+      <button type="button" id="log-collapse-btn" class="btn small" onclick="toggleLogPanel()" title="Hide log">◀</button>
+    </div>
+    <div id="log"></div>
+  </aside>
+</div>
+
+<button type="button" id="log-fab" onclick="toggleLogPanel()" aria-label="Open activity log">Log</button>
+<div id="log-drawer-backdrop" onclick="toggleLogPanel(false)" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+window.addEventListener('error', function (e) {
+  if (e && e.target && e.target.tagName === 'SCRIPT' && !window.__gameLoaded) {
+    document.getElementById('content').innerHTML =
+      '<div class="card"><h2>Failed to load game.js</h2>'
+      + '<div class="desc">Serve the folder over HTTP (python3 serve.py) and reload.</div></div>';
+  }
+}, true);
+</script>
+<script src="game.js"></script>
+</body>
+</html>
